@@ -7,7 +7,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 
 # Veri yükle
-df = pd.read_csv("../gun2/sms_clean.csv")
+df = pd.read_csv("C:\\Users\\umut\\staj-projesi\\gun2\\sms_clean.csv")
 
 # X (metin), y (etiket)
 X = df['text']

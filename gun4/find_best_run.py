@@ -10,6 +10,7 @@ runs = client.search_runs(experiment_ids=[experiment.experiment_id],
 best_run = runs[0]
 run_id = best_run.info.run_id
 
+# best_run.txt dosyasına yaz
 with open("best_run.txt", "w") as f:
     f.write(run_id)
 

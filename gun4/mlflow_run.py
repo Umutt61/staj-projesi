@@ -7,8 +7,12 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
+# 🔥 MLflow tracking URI belirt — en önemli satır!
+mlflow.set_tracking_uri("file:mlruns")
+mlflow.set_experiment("sms_model_compare")
+
 # Veri yükleme
-df = pd.read_csv("../gun2/sms_clean.csv")
+df = pd.read_csv("C:/Users/umut/staj-projesi/gun2/sms_clean.csv")
 X = df['text']
 y = df['label']
 
@@ -27,9 +31,7 @@ models = {
     "RandomForest": RandomForestClassifier(n_estimators=100, random_state=42)
 }
 
-# MLflow ile deneme
-mlflow.set_experiment("sms_model_compare")
-
+# MLflow ile her model için deney başlat
 for name, model in models.items():
     with mlflow.start_run(run_name=name):
         model.fit(X_train_vec, y_train)
@@ -40,7 +42,7 @@ for name, model in models.items():
         rec = recall_score(y_val, preds, pos_label="spam")
         f1 = f1_score(y_val, preds, pos_label="spam")
 
-        # MLflow ile metrikleri kaydetme
+        # Parametre ve metrikleri kaydet
         mlflow.log_param("model_name", name)
         mlflow.log_metrics({
             "accuracy": acc,

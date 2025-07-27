@@ -1,32 +1,41 @@
-# SMS Spam Sınıflandırma (Gün 8)
+Titanic: Yolcuların Hayatta Kalma Tahmini
 
-## Problem Tanımı
-Bu projede, SMS mesajlarının spam mi yoksa ham (normal) mı olduğunu sınıflandırmayı amaçlıyoruz. Ham mesajlar 0 ile spam mesajlar 1 etiketiyle gösterilmiştir.
+Bu projede Titanic veri seti kullanılarak, yolcuların hayatta kalıp kalmadığını tahmin eden basit bir makine öğrenmesi modeli geliştirilmiştir.
 
-## Hedef Değişken
-- `label`: 0 = ham, 1 = spam
+> Amaç
+Yolcu bilgilerini kullanarak (Age, Pclass, Sex, vs.) hayatta kalma durumunu (Survived) tahmin eden bir model eğitmek.
 
-## Veri Seti
-- Kaynak: `sms.tsv` (etiket, mesaj)
-- Boyut: 5572 mesaj
+> Kullanılan Veriler
+train.csv: Modelin eğitildiği veri.
 
-## Kullandığım Araçlar
-- Python, pandas, sklearn, seaborn
-- TF-IDF + LogisticRegression
+test.csv: Tahmin yapılacak veri.
 
-## İlk Sonuçlar (Baseline Model)
-              precision    recall  f1-score   support
+gender_submission.csv: Kaggle tarafından verilen örnek tahmin dosyası.
 
-           0       0.97      1.00      0.98       966
-           1       1.00      0.80      0.89       149
+> Adımlar
+Veriler yüklendi ve temizlendi (NaN değerler, Sex ve Embarked encoding).
+Özellik seçimi yapıldı (Pclass, Sex, Age, SibSp, Parch, Fare, Embarked).
+TF-IDF gibi text vektörleştirme yerine Numerical + Categorical encoding uygulandı.
+Baseline model olarak Logistic Regression kullanıldı.
 
-    accuracy                           0.97      1115
-   macro avg       0.98      0.90      0.94      1115
-weighted avg       0.97      0.97      0.97      1115
+> İlk Sonuçlar
+Metric	Değer
+Accuracy: 0.8044692737430168
+Precision: 0.765625
+Recall: 0.7101449275362319
+F1-Score: 0.7368421052631579
 
-Accuracy: 0.9730941704035875
-Precision: 1.0
-Recall: 0.7986577181208053
-F1-Score: 0.8880597014925373
+> Dosya Yapısı
+gun8/
+├── data/
+│   ├── train.csv
+│   ├── test.csv
+│   └── gender_submission.csv
+├── baseline.py
+├── predict_test_set.py
+└── README.md
 
-> Not: Sonuçlar `baseline.py` dosyasındaki Logistic Regression modeliyle elde edilmiştir.
+> Notlar
+Cabin, Name gibi sütunlar çıkarıldı çünkü çok eksik veya az anlamlıydı.
+predict_test_set.py yalnızca test setine tahmin üretir.
+Tahmin sonuç dosyası, predicted_submission.csv olarak kaydedilmiştir.

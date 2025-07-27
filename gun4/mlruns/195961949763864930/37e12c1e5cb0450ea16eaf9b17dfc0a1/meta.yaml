@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/umut/staj-projesi/gun4/mlruns/195961949763864930/37e12c1e5cb0450ea16eaf9b17dfc0a1/artifacts
+end_time: 1753182907448
+entry_point_name: ''
+experiment_id: '195961949763864930'
+lifecycle_stage: active
+run_id: 37e12c1e5cb0450ea16eaf9b17dfc0a1
+run_name: MultinomialNB
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753182907396
+status: 3
+tags: []
+user_id: umut

@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/umut/staj-projesi/gun4/mlruns/195961949763864930/1482b11667424a699fd48c5dacbcebb3/artifacts
+end_time: 1753182699526
+entry_point_name: ''
+experiment_id: '195961949763864930'
+lifecycle_stage: active
+run_id: 1482b11667424a699fd48c5dacbcebb3
+run_name: LogisticRegression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753182699460
+status: 3
+tags: []
+user_id: umut

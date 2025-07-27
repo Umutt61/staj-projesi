@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/umut/staj-projesi/gun4/mlruns/195961949763864930/0bfd72f664c94a2c9ad703b7a46646bb/artifacts
+end_time: 1753183346736
+entry_point_name: ''
+experiment_id: '195961949763864930'
+lifecycle_stage: active
+run_id: 0bfd72f664c94a2c9ad703b7a46646bb
+run_name: RandomForest
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753183345834
+status: 3
+tags: []
+user_id: umut
